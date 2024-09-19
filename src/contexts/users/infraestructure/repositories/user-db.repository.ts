@@ -82,4 +82,14 @@ export class UserDbRepository extends UserRepository {
 
     return users.map((user) => UserModel.createFromDb(user.toObject()));
   }
+
+  async findBySocketId(socketId: string): Promise<UserModel> {
+    const user = await this.userModel.findOne({ socket_id: socketId }).exec();
+
+    if (!user) {
+      throw new NotFoundDatabaseException('user');
+    }
+
+    return UserModel.createFromDb(user.toObject());
+  }
 }

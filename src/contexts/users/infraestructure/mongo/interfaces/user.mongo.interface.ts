@@ -5,4 +5,5 @@ export interface UserMongoEntity extends Document {
   email: string;
   password: string;
   profile_id: string;
+  socket_id: string;
 }

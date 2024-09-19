@@ -20,6 +20,11 @@ const UserMongoSchema = new mongoose.Schema(
       required: false,
       default: null,
     },
+    socket_id: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
   {
     timestamps: true,

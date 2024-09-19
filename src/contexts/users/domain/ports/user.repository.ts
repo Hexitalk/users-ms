@@ -7,4 +7,5 @@ export abstract class UserRepository {
   abstract findById(id: string): Promise<UserModel | null>;
   abstract findByEmail(email: string): Promise<UserModel | null>;
   abstract findListByIds(ids: string[]): Promise<UserModel[]>;
+  abstract findBySocketId(socketId: string): Promise<UserModel>;
 }

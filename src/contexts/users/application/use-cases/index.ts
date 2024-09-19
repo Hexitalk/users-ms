@@ -4,3 +4,5 @@ export * from './find-list-user-by-ids-use-case/find-list-user-by-ids-use-case';
 export * from './find-user-by-email-use-case/find-user-by-email-use-case';
 export * from './find-user-by-id-use-case/find-user-by-id-use-case';
 export * from './set-profile-id-user-use-case/set-profile-id-user-use-case';
+export * from './clear-user-socket-id-use-case/clear-user-socket-id-use-case';
+export * from './update-user-socket-id-use-case/update-user-socket-id-use-case';

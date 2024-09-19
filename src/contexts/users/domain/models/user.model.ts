@@ -3,6 +3,7 @@ export interface UserModelInterface {
   email?: string;
   password?: string;
   profile_id?: string;
+  socket_id?: string;
 }
 
 export interface UserModelInterfaceDB {
@@ -10,6 +11,7 @@ export interface UserModelInterfaceDB {
   email?: string;
   password?: string;
   profile_id?: string;
+  socket_id?: string;
 }
 
 export class UserModel {
@@ -21,6 +23,7 @@ export class UserModel {
       email: attributes.email ?? '',
       password: attributes.password ?? '',
       profile_id: attributes.profile_id ?? undefined,
+      socket_id: attributes.socket_id ?? '',
     });
   }
 
@@ -30,6 +33,7 @@ export class UserModel {
       email: attributes.email ?? '',
       password: attributes.password ?? '',
       profile_id: attributes.profile_id ?? undefined,
+      socket_id: attributes.socket_id ?? '',
     });
   }
 
