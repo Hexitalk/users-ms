@@ -38,7 +38,13 @@ export class UserModel {
   }
 
   toInterface(): UserModelInterface {
-    return { ...this.attributes };
+    return {
+      ...this.attributes,
+      id: this.attributes.id.toString(),
+      profile_id: this.attributes.profile_id
+        ? this.attributes.profile_id.toString()
+        : null,
+    };
   }
 
   toInterfaceDb(): UserModelInterfaceDB {

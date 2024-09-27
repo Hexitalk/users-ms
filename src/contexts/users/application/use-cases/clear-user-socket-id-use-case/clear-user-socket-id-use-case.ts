@@ -26,21 +26,19 @@ export class ClearUserSocketIdUseCase {
     socketId: string,
     @NatsPayloadConfig() config?: NatsPayloadConfigInterface,
   ): Promise<void> {
-    console.log(socketId);
-
-    const userResult: UserModel =
-      await this.userRepository.findBySocketId(socketId);
-
-    if (!userResult) {
-      throw new FailCreateUserRpcException();
-    }
-
-    const userModelUpdate = UserModel.create({
-      ...userResult.toInterface(),
-      socket_id: '',
-    });
-
     try {
+      const userResult: UserModel =
+        await this.userRepository.findBySocketId(socketId);
+
+      if (!userResult) {
+        throw new FailCreateUserRpcException();
+      }
+
+      const userModelUpdate = UserModel.create({
+        ...userResult.toInterface(),
+        socket_id: '',
+      });
+
       const updatedUser = await this.userRepository.update(userModelUpdate);
 
       const userInterface = updatedUser.toInterface();
